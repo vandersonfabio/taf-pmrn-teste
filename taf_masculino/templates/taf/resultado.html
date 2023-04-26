@@ -1,0 +1,39 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% load static %}
+<title>Calculadora TAF | PMRN</title>
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+<div class="container text-center">
+    <br>
+    <h2>Resultado:</h2>    
+    {% if situacao == "Aprovado" %} <h2 class="alert alert-success">Média geral: {{ media_geral }} <br> {{ situacao }} </h2> {% endif %}
+    {% if situacao == "Reprovado" %} <h2 class="alert alert-danger">Média geral: {{ media_geral }} <br> {{ situacao }} </h2> {% endif %}
+
+    <div class="alert alert-dark text-left">
+        <h4>Seus índices:</h4>
+        <hr>
+        <h5>Corrida: {{ n1 }}</h5>
+        <h5>Shuttle run: {{ n2 }}</h5>
+        <h5>Flexão na barra: {{ n3 }}</h5>
+        <h5>Flexão no solo: {{ n4 }}</h5>
+        <h5>Abdominais: {{ n5 }}</h5>
+    </div>    
+    <div class="form-group">
+        <a onClick="history.go(-1)" class="btn btn-outline-info btn-lg btn-block">Voltar</a>
+    </div>
+    <div class="form-group text-center">
+        <a class="btn btn-outline-danger" 
+        href="https://drive.google.com/file/d/1XTq4rAo0iScnLqMZ3GD4wsE8WgnCgIMD/view?usp=sharing" 
+        target="_blank">Dúvidas sobre os índices? Clique aqui.</a>
+    </div>    
+</div>
+
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Desenvolvido pelo Cb PM Vanderson |  
+      <a class="text-dark" href="https://www.instagram.com/assecom6bpm/" target="_blank">Assecom | 6º BPM</a>
+    </div>
+    <!-- Copyright -->
+</footer>
