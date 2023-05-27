@@ -57,7 +57,7 @@
             <label for="n_flexoes_solo_input">Flexão no solo</label>
             <input type="number" class="form-control form-control-lg f_solo" 
             id="n_flexoes_solo_input" name="n_flexoes_solo_input" 
-            min="0" max="99" placeholder="Insira o nº de flexões no solo">
+            min="0" max="99" placeholder='Exercício indisponível para esta faixa etária' disabled>
         </div>
         <div class="form-group">
             <label for="n_abdominais_input">Abdominal remador</label>
@@ -115,10 +115,10 @@
         var idade = $(this).children("option:selected").val();
 
         if(idade == 50){
-            $(".shuttle").val('')
-            $(".t_barra").val('')
-            $(".shuttle").prop('disabled', true);
-            $(".t_barra").prop('disabled', true);
+
+            $(".f_solo").val('').prop('disabled', false).attr("placeholder", "Insira o nº de flexões no solo");          
+            $(".shuttle").val('').prop('disabled', true).attr("placeholder", "Exercício indisponível para esta faixa etária");
+            $(".t_barra").val('').prop('disabled', true).attr("placeholder", "Exercício indisponível para esta faixa etária");
 
             swal({
                 title: "Idade acima de 50 anos",
@@ -128,9 +128,9 @@
             
         }
         else if(idade > 34){
-            $(".shuttle").prop('disabled', false);
-            $(".t_barra").prop('disabled', false);
-            $(".f_solo").prop('disabled', false);        
+            $(".shuttle").val('').prop('disabled', false).attr("placeholder", "Insira o tempo no shuttle run");
+            $(".t_barra").val('').prop('disabled', false).attr("placeholder", "Insira o tempo de contração na barra");
+            $(".f_solo").val('').prop('disabled', false).attr("placeholder", "Insira o nº de flexões no solo");        
             swal({
                 closeOnClickOutside: false,
                 title: "Idade entre 35 e 49 anos",
@@ -154,21 +154,21 @@
                     case "barra":
                         swal("Você escolheu a CONTRAÇÃO ISOMÉTRICA NA BARRA FIXA", "Caso queira alterar sua escolha, mude a idade e volte para sua faixa etária correta", "success", {timer: 7000,});
                         $(".f_solo").val('')
-                        $(".f_solo").prop('disabled', true);
+                        $(".f_solo").prop('disabled', true).attr("placeholder", "Optou por não realizar o exercício");
                         break;
                 
                     case "solo":
                         swal("Você escolheu a FLEXÃO DE BRAÇO NO SOLO", "Caso queira alterar sua escolha, mude a idade e volte para sua faixa etária correta", "success", {timer:7000,});
                         $(".t_barra").val('')
-                        $(".t_barra").prop('disabled', true);
+                        $(".t_barra").prop('disabled', true).attr("placeholder", "Optou por não realizar o exercício");
                         break;                
                 }
             });                    
         }
         else{
-            $(".shuttle").prop('disabled', false);
-            $(".t_barra").prop('disabled', false);
-            $(".f_solo").prop('disabled', false);
+            $(".shuttle").val('').prop('disabled', false).attr("placeholder", "Insira o tempo no shuttle run");
+            $(".t_barra").val('').prop('disabled', false).attr("placeholder", "Insira o nº de flexões na barra");
+            $(".f_solo").val('').prop('disabled', true).attr("placeholder", "Exercício indisponível para esta faixa etária");
         }        
     });
 </script>
