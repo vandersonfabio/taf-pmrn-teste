@@ -230,9 +230,9 @@ def MediaGeral(idade, tempo_corrida, tempo_shutle, n_flexoes_barra, n_flexoes_so
         nota_corrida = NotaCorrida(idade, tempo_corrida)
         nota_shuttle = NotaShuttle(idade, tempo_shutle)
         nota_flexoes_barra = NotaFlexaoBarra(idade, n_flexoes_barra)
-        nota_flexoes_solo = NotaFlexaoSolo(idade, n_flexoes_solo)
+        nota_flexoes_solo = 'Exercício indisponível para esta faixa etária'
         nota_abdominais = NotaAbdominal(idade, n_abdominais)
-        media_geral = (nota_corrida + nota_shuttle + nota_flexoes_barra + nota_flexoes_solo + nota_abdominais) / 5
+        media_geral = (nota_corrida + nota_shuttle + nota_flexoes_barra + nota_abdominais) / 4
 
     media_geral = round(media_geral, 3)
 
@@ -314,9 +314,9 @@ def MediaGeralFeminino(idade, tempo_corrida, tempo_shutle, tempo_barra, n_flexoe
         nota_corrida = NotaCorridaFeminino(idade, tempo_corrida)
         nota_shuttle = NotaShuttleFeminino(idade, tempo_shutle)
         nota_barra = NotaContracaoBarraFeminino(idade, tempo_barra)
-        nota_flexoes_solo = NotaFlexaoSoloFeminino(idade, n_flexoes_solo)
+        nota_flexoes_solo = 'Exercício indisponível para esta faixa etária'
         nota_abdominais = NotaAbdominalFeminino(idade, n_abdominais)
-        media_geral = (nota_corrida + nota_shuttle + nota_barra + nota_flexoes_solo + nota_abdominais) / 5
+        media_geral = (nota_corrida + nota_shuttle + nota_barra + nota_abdominais) / 4
 
     media_geral = round(media_geral, 3)
 
