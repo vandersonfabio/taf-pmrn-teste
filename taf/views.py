@@ -5,10 +5,26 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'taf/home.html')
 
-def feminino(request):
-    return render(request, 'taf/feminino.html')
+def eacf1_masculino(request):
+    return render(request, 'taf/eacf1_masculino.html')
+
+def eacf6_masculino(request):
+    return render(request, 'taf/eacf6_masculino.html')
+
+def eacf1_feminino(request):
+    return render(request, 'taf/eacf1_feminino.html')
+
+def eacf6_feminino(request):
+    return render(request, 'taf/eacf6_feminino.html')
 
 def resultado(request):
+
+    try:
+        caminho = request.META.get("HTTP_REFERER", "localhost")
+        origem = caminho.split('/')[-2]
+    except:
+        origem = "localhost"
+
     idade = float(request.GET.get('idade_input'))
     
     tempo_corrida = (25 if not request.GET.get('tempo_corrida_input') else float(request.GET.get('tempo_corrida_input').replace(':', '.')))
@@ -27,6 +43,7 @@ def resultado(request):
 
     return render(request, 'taf/resultado.html', {
         'media_geral': media_geral,
+        'origem': origem,
         'situacao':situacao,
         'n1':notas['corrida'], 
         'n2':notas['shuttle'], 
@@ -250,6 +267,13 @@ def MediaGeral(idade, tempo_corrida, tempo_shutle, n_flexoes_barra, n_flexoes_so
 ################## RESULTADO PARA POLICIAIS FEMININAS ############################
 
 def resultado_feminino(request):
+
+    try:
+        caminho = request.META.get("HTTP_REFERER", "localhost")
+        origem = caminho.split('/')[-2]
+    except:
+        origem = "localhost"
+
     idade = float(request.GET.get('idade_input'))
     
     tempo_corrida = (25 if not request.GET.get('tempo_corrida_input') else float(request.GET.get('tempo_corrida_input').replace(':', '.')))
@@ -268,6 +292,7 @@ def resultado_feminino(request):
 
     return render(request, 'taf/resultado_feminino.html', {
         'media_geral': media_geral,
+        'origem': origem,
         'situacao':situacao,
         'n1':notas['corrida'], 
         'n2':notas['shuttle'], 
