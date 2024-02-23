@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from taf import views
 
+
 urlpatterns = [
     #path('', views.eacf1_masculino, name='eacf1_masculino'),
     path('', views.home, name='home'),
