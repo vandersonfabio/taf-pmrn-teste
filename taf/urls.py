@@ -5,6 +5,7 @@ from taf import views
 urlpatterns = [
     #path('', views.eacf1_masculino, name='eacf1_masculino'),
     path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
     path('eacf1_masculino/', views.eacf1_masculino, name='eacf1_masculino'),
     path('eacf6_masculino/', views.eacf6_masculino, name='eacf6_masculino'),
     path('resultado/', views.resultado, name='resultado'),
