@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: taf-pmrn-teste
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn taf.wsgi:application"
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: taf_pmrn.settings
+      - key: SECRET_KEY
+        value: ${SECRET_KEY}
+      - key: DEBUG
+        value: True
