@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '3fy3j_kxpk%7f60)(2_w+3bshtfy5p7h*7k_4b(91ij4-ban&2')
 
 # DEBUG ativado só se for explicitamente True
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG =  'False'
 
 # Permitido para o domínio do Render
 ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']

@@ -12,3 +12,5 @@ services:
         value: ${SECRET_KEY}
       - key: DEBUG
         value: True
+      - key: PYTHONUNBUFFERED
+        value: '1'
